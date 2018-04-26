@@ -1,0 +1,6 @@
+{
+  "docs": {
+    "Manual": ["ana_users", "install_instructions", "quickstart", "gui"],
+    "Reference": ["config", "algorithms"]
+  }
+}
