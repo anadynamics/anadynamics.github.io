@@ -1,0 +1,151 @@
+<html lang="en"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuration variables · ANA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta property="og:title" content="Configuration variables · ANA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://anadynamics.netlify.com/index.html"/><meta property="og:description" content="## Options included in ANA GUI"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://anadynamics.netlify.com/blog/atom.xml" title="ANA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://anadynamics.netlify.com/blog/feed.xml" title="ANA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.png"/><h2 class="headerTitle">ANA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li><a href="/en/help.html" target="_self">Download</a></li><li><a href="/docs/ana_users.html" target="_self">Docs</a></li><li><a href="/blog" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Reference</span></h2></div><div class="navGroups"><div class="navGroup navGroupActive"><h3>Manual</h3><ul><li class="navListItem"><a class="navItem" href="/docs/ana_users.html">Who is ANA for?</a></li><li class="navListItem"><a class="navItem" href="/docs/install_instructions.html">Installation instructions</a></li><li class="navListItem"><a class="navItem" href="/docs/quickstart.html">Quickstart</a></li><li class="navListItem"><a class="navItem" href="/docs/gui.html">ANA GUI</a></li></ul></div><div class="navGroup navGroupActive"><h3>Reference</h3><ul><li class="navListItem navListItemActive"><a class="navItem navItemActive" href="/docs/config.html">Configuration variables</a></li><li class="navListItem"><a class="navItem" href="/docs/algorithms.html">ANA algorithms</a></li></ul></div></div></section></div><script>
+          var toggler = document.getElementById('navToggler');
+          var nav = document.getElementById('docsNav');
+          toggler.onclick = function() {
+            nav.classList.toggle('docsSliderActive');
+          };
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1>Configuration variables</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" name="options-included-in-ana-gui"></a><a href="#options-included-in-ana-gui" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options included in ANA GUI</h2>
+<h3><a class="anchor" aria-hidden="true" name="terminal-options"></a><a href="#terminal-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Terminal options</h3>
+<pre><code class="hljs">input_struct,i
+</code></pre>
+<p>Positional argument. Input structure (.pdb).</p>
+<pre><code class="hljs">input_md,d
+</code></pre>
+<p>Input file with MD simulation. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">NDD_input,I
+</code></pre>
+<p>File with the list of input .pdbs for Non-Delaunay dynamics. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">config_file,c
+</code></pre>
+<p>Filename of the configuration file. Default value: <strong>ANA.cfg</strong>.</p>
+<pre><code class="hljs">output_draw,o
+</code></pre>
+<p>Output filename. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">NDD_output,O
+</code></pre>
+<p>Name of the non Delaunay dynamics output file. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">tool_ch,C
+</code></pre>
+<p>Filename of the .pdb file displaying the included. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">ver,v
+</code></pre>
+<p>Output version number.</p>
+<h3><a class="anchor" aria-hidden="true" name="included-area-options"></a><a href="#included-area-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Included area options</h3>
+<pre><code class="hljs">included_area_residues
+</code></pre>
+<p>Amino acids that delimit the convex hull of the included area. Numbers from 1
+to 9999, separated by commas, spaces or tabs. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">included_area_atoms
+</code></pre>
+<p>Atoms that delimit the convex hull of the included area. Numbers from 1
+to 9999, separated by commas, spaces or tabs. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">included_area_precision
+</code></pre>
+<p><strong>0</strong>: keep all cells that intercede in the included area; <strong>1</strong>: only keep null areas
+that are within the included area. Default value: <strong>0</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" name="accessible-surface-area-options"></a><a href="#accessible-surface-area-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessible Surface Area options</h3>
+<pre><code class="hljs">ASA_discard_method
+</code></pre>
+<p><strong>none</strong>: don't discard; <strong>cm</strong>: determine cells surroundings using the global
+CM as reference; <strong>backbone</strong>: draw a convex hull between the Calphas and
+discard every cell with its centroid outside(inside) the hull;
+<strong>axes</strong>: determine cells surroundings using its centroid and cartesian axes as references.
+Default value: <strong>cm</strong>.</p>
+<pre><code class="hljs">ASA_only_side
+</code></pre>
+<p><strong>inside</strong>: keep inside nulls; <strong>outside</strong>: keep outside nulls. Default value: <strong>inside</strong>.</p>
+<pre><code class="hljs">ASA_exclude_residues
+</code></pre>
+<p>Don't use these to discard ASA cells. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">ASA_min_dot_pdt
+</code></pre>
+<p>Minimum dot product to keep (discard) cell. As it increases more cells are
+classified as being outside. Default value: <strong>0.7</strong>.</p>
+<pre><code class="hljs">ASA_max_dist
+</code></pre>
+<p>Maximum distance between cell and Calpha used to keep cell. The bigger this
+number is the better (but slower) the process gets. Default value: <strong>15</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" name="clusters-options"></a><a href="#clusters-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Clusters options</h3>
+<pre><code class="hljs">clusters_method
+</code></pre>
+<p><strong>none</strong>: don't group null areas; <strong>facets</strong>: group null areas if the tetrahedrons share
+facets; <strong>boxes</strong>: group null areas if the tetrahedrons bounding boxes intersect.
+Default value: <strong>boxes</strong>.</p>
+<pre><code class="hljs">clusters_min_size
+</code></pre>
+<p>Minimum number of cells a cluster has to have to be included.
+Default value: <strong>2</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" name="md-options"></a><a href="#md-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MD options</h3>
+<pre><code class="hljs">start
+</code></pre>
+<p>Frame to begin reading at. Default value: <strong>1</strong>;</p>
+<pre><code class="hljs">step
+</code></pre>
+<p>Step count to read trajectory frames. Note that only NetCDF files support this feature. Default value: <strong>1</strong>;</p>
+<pre><code class="hljs">stop
+</code></pre>
+<p>Frame to stop reading. Default value: <strong>0</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" name="output-options"></a><a href="#output-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Output options</h3>
+<pre><code class="hljs">output_type
+</code></pre>
+<p><strong>raw_pdb</strong>: null areas as tetrahedrons (residues); <strong>grid_pdb</strong> null areas
+filled with points. Default value: <strong>grid_pdb</strong>.</p>
+<pre><code class="hljs">sphere_size
+</code></pre>
+<p>sphere size for grid output. Default value: <strong>0.3</strong>.</p>
+<pre><code class="hljs">sphere_count
+</code></pre>
+<p>sphere count for grid output. Default value: <strong>5</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" name="misc-options"></a><a href="#misc-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Misc options</h2>
+<pre><code class="hljs">atom_only
+</code></pre>
+<p>Triangulate only ATOM records.\n&quot; default_value(<strong>true</strong>)</p>
+<pre><code class="hljs">list_wall
+</code></pre>
+<p><strong>atom</strong>: output a file with the wall atoms; <strong>residue</strong>: output a file with
+the wall amino acids; <strong>none</strong>: don't write wall file. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">separator
+</code></pre>
+<p>Separator character for wall residues or atoms. Default value: <strong>\t</strong>.</p>
+<pre><code class="hljs">min_vol_radius
+</code></pre>
+<p>Radius of the sphere with the minimum volume to be taken into account.
+Default value: <strong>1.4</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" name="options-not-included-in-ana-gui"></a><a href="#options-not-included-in-ana-gui" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options not included in ANA GUI</h2>
+<h3><a class="anchor" aria-hidden="true" name="terminal-options"></a><a href="#terminal-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Terminal options</h3>
+<pre><code class="hljs">include,f
+</code></pre>
+<p>Coordinates of the included area in .pdb format. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">tool_pdb_ch,P
+</code></pre>
+<p>Read the input .pdb and write <em>include.ANA</em> file with the vertices of its
+convex hull. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">tool_pdb_norm,N
+</code></pre>
+<p>Filename of the output .pdb file. Read the input .pdb and renumber its atoms and residues.
+Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">tool_aa_to_ca,T
+</code></pre>
+<p>Write Calpha atoms indices for the included residues to stdout. Default value: <strong>none</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" name="misc-options"></a><a href="#misc-options" aria-hidden="true" class="hash-link" ><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>misc options</h3>
+<pre><code class="hljs">included_amino_acids
+</code></pre>
+<p>Amino acids that are part of a cell. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">sphere
+</code></pre>
+<p>Read the input coordinates and write <em>include_sphere.ANA</em> file with the
+requested pseudo sphere. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">cylinder
+</code></pre>
+<p>Read the input coordinates and write <em>include_cylinder.ANA</em> file with the
+requested pseudo cylinder. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">prism
+</code></pre>
+<p>Read the input coordinates and write <em>include_prism.ANA</em> file with the requested prism. Default value: <strong>none</strong>.</p>
+<pre><code class="hljs">triangulate_only_included_aas
+</code></pre>
+<p>Instead of triangulating the whole molecule, triangulate only the included amino acids. Default value: <strong>false</strong>.</p>
+<pre><code class="hljs">minimum_number_of_vertices_to_include
+</code></pre>
+<p>Minimum number of wall atoms of the included amino acids.Default value: <strong>99</strong>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="gui.html">← ANA GUI</a><a class="docs-next button" href="algorithms.html">ANA algorithms →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.png" alt="ANA" width="120" height="110"/></a><div><h5>ANA</h5><a href="/docs/en/doc1.html">Download</a><a href="/docs/en/doc2.html">Docs</a><a href="/docs/en/doc3.html">Blog</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/pgbarletta">GitHub</a><a class="github-button" href="https://github.com/anadynamics/anadynamics.github.io" data-icon="octicon-star" data-count-href="https://github.com/pgbarletta" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2018 Facebook Inc.</section></footer></div></body></html>

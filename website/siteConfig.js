@@ -8,7 +8,7 @@
 /* List of projects/orgs using your project for the users page */
 const users = [
   {
-    baseUrl: '/test-site/' /* base url for your project */,
+    baseUrl: '/' /* base url for your project */,
     caption: 'User1',
     image: 'img/oss_logo.png',
     infoLink: 'https://github.com/pgbarletta',
@@ -19,9 +19,9 @@ const users = [
 const siteConfig = {
   title: 'ANA' /* title for your website */,
   tagline: 'Easy pocket volume tracking',
-  url: 'https://github.com/pgbarletta' /* your website url */,
-  baseUrl: '/test-site/' /* base url for your project */,
-  projectName: 'ANA',
+  url: 'https://anadynamics.netlify.com' /* your website url */,
+  baseUrl: '/' /* base url for your project */,
+  projectName: 'anadynamics',
   headerLinks: [
     {page: 'help', label: 'Download'},
     {doc: 'ana_users', label: 'Docs'},
@@ -42,15 +42,15 @@ const siteConfig = {
     'GPL License' +
     new Date().getFullYear() +
     ' hacé lo q se te cante',
-  // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
-  // projectName: 'test-site', // or set an env variable PROJECT_NAME
+  organizationName: 'anadynamics',
+  // projectName: 'anadynamics.github.io',
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
   },
   scripts: ['https://buttons.github.io/buttons.js'],
   // You may provide arbitrary config keys to be used as needed by your template.
-  repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/anadynamics/anadynamics.github.io',
 };
 
 module.exports = siteConfig;
