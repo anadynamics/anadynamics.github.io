@@ -23,7 +23,7 @@ const siteConfig = {
   baseUrl: '/' /* base url for your project */,
   projectName: 'anadynamics',
   headerLinks: [
-    {page: 'help', label: 'Download'},
+    {doc: 'install_instructions', label: 'Download'},
     {doc: 'ana_users', label: 'Docs'},
     {blog: true, label: 'Blog'},
   ],
