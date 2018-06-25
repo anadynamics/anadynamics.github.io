@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2017-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -35,25 +35,24 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>ANA</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
+            <a href={this.docUrl('install_instructions.html', this.props.language)}>
               Download
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
+            <a href={this.docUrl('ana_users.html', this.props.language)}>
               Docs
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              Blog
+            <a href={this.props.config.baseUrl + 'blog'}>
+            Blog
             </a>
           </div>
           <div>
             <h5>More</h5>
-            <a href={this.props.config.baseUrl + 'blog'}>Blog</a>
-            <a href="https://github.com/pgbarletta">GitHub</a>
+            <a href="https://github.com/anadynamics">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="https://github.com/pgbarletta"
+              data-count-href="https://github.com/pgbarletta/anadynamics"
               data-show-count={true}
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
@@ -74,7 +73,7 @@ class Footer extends React.Component {
           />
         </a>
         <section className="copyright">
-          Copyright &copy; {currentYear} Facebook Inc.
+         ANA is GPL licensed. Hacé lo q se te cante.
         </section>
       </footer>
     );
