@@ -123,7 +123,7 @@ const LearnHow = props => (
   <Block background="light">
     {[
       {
-        content: 'On the [Docs](http://localhost:3000/test-site/docs/ana_users.html) section.',
+        content: 'In the [Docs](/docs/ana_users.html) section',
         image: imgUrl('config_example.png'),
         imageAlign: 'right',
         title: 'Learn How',
@@ -132,7 +132,7 @@ const LearnHow = props => (
   </Block>);
 
     const TryOut = props => (<Block id = "try">{[{
-      content : '[Download](https://github.com/lionixevolve/ana/releases) now.',
+      content : '[Download](/docs/install_instructions.html) now.',
       image : imgUrl('tetra_vdw_filled.png'),
       imageAlign : 'left',
       title : 'Try it Out',
@@ -144,7 +144,7 @@ const Description = props => (
   <Block background="dark">
     {[
       {
-        content: 'As seen on \"Protein Fluctuations and Cavity Changes Relationship\" by Barletta & Fernandez-Alberti. Check [this](http://localhost:3000/test-site/blog/2016/03/11/blog-post.html) example on the blog.',
+        content: 'As seen on \"Protein Fluctuations and Cavity Changes Relationship\" by Barletta & Fernandez-Alberti. Check [this](/blog) example on the blog.',
         image: imgUrl('abstract_fig.png'),
         imageAlign: 'right',
         title: 'Non-Delaunay Dynamics',
