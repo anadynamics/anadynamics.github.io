@@ -18,7 +18,7 @@ impossible, since there is no such thing), but we'll do our best.
 
 First, let's run ANA naively, without any configuration file:
 ```
-> ANA 1mtn.pdb -o 1_salida
+> ANA2 1mtn.pdb -f 1_salida
 
 Pocket 1        124.569
 Pocket 2        191.057
@@ -48,7 +48,7 @@ annoyingly long list sou you'll probably never use it.
 
 We'll see later why we specified '+' as the separator character. Let's run it:
 ```
-> ANA 1mtn.pdb -c 1.cfg -o 1_salida
+> ANA2 1mtn.pdb -c 1.cfg -f 1_salida -w wall_1mtn
 ```
 
 Thus, we get the output file called *wall_1mtn*. This is the section that
@@ -76,7 +76,7 @@ list_wall = residue
 ```
 and re-run it:
 ```
-> ANA 1mtn.pdb -c 2.cfg -o 1_salida
+> ANA2 1mtn.pdb -c 2.cfg -f 1_salida -w wall_1mtn
 ```
 to get a nicer output:
 ```
@@ -93,12 +93,12 @@ Now, let's paste this list in the configuration file to draw an included area.
 included_area_residues = 28      29      32      33      45      46      49      54      57      58      60      61      62      72      77      80      81      84      86      90      94      98      119     122     128 
 included_area_precision = 1
 ```
-and run it using the *--tool_ch* flag. This will draw the convex hull obtained
+and run it using the *--tool_check_CH* or *-t* flag. This will draw the convex hull obtained
 by triangulating the alpha carbons from the residues listed in the 
 *included_area_residues* variable.
 
 ```
-> ANA 1mtn.pdb -c 3.cfg -o 1_salida --tool_ch=ch_3_testing
+> ANA2 1mtn.pdb -c 3.cfg -f 1_salida --tool_check_CH ch_3_testing
 ```
 If we load the *ch_3_testing.pdb* file on pymol, we'll see something like this:
 
@@ -114,8 +114,8 @@ see a problematic vertex (for example, the residue 72 that is causing the
 included area to have a protuberance to the left), remove it from the list.
 
 Also, you don't want too many unnecessary residues listed in the
-*included_area_residues* variable, since this will result in an unnecessary
-overhead.
+*included_area_residues* variable, since this will result in a minor though
+unnecessary overhead.
 
 After pruning the list (removing several residues and adding new ones to
 get a more elongated cavity), we are left with this config file:
@@ -125,7 +125,7 @@ included_area_precision = 1
 ```
 We re-run the check to see the resulting convex hull:
 ```
-> ANA 1mtn.pdb -c 4.cfg -o 1_salida --tool_ch=ch_4_testing
+> AN2 1mtn.pdb -c 4.cfg -f 1_salida -t ch_4_testing
 ```
 and load the *ch_4_testing.pdb* file on pymol:
 
@@ -135,7 +135,7 @@ We're now ready to track our pocket. We use the *-d* flag (think of dynamics)
 to include the trajectory
 
 ```
-> ANA 1mtn.pdb -c 4.cfg -d mtn.nc -o salida
+> AN2 1mtn.pdb -c 4.cfg -d mtn.nc -f salida
 
 1       431.968
 2       429.337
@@ -151,12 +151,12 @@ Writing output...
 Done
 ```
 And now *salida.pdb* is a trajectory file with our pocket dynamics. 
-Using the *tool_ch* flag you can see how the included area changed during the
+Using the *-t* flag you can see how the included area changed during the
 trajectory, following the listed residues.
 ```
-> ANA 1mtn.pdb -c 4.cfg -d mtn.nc -o salida --tool_ch=ch_5_testing
+> ANA2 1mtn.pdb -c 4.cfg -d mtn.nc -f salida -t ch_5_testing
 ```
-Now, the output of *tool_ch* is also a trajectory file. If we load it and zoom
+Now, the output of *--tool_check_CH* is also a trajectory file. If we load it and zoom
 in, we can see the differences between the original (purple) static convex hull
 and the dynamic one (green):
 
@@ -171,12 +171,12 @@ case) there won't be much difference.
 
 ### Addendum
 
-1. Remember that whenever you use a tool like *tool_ch*, ANA will only perform
+1. Remember that whenever you use a tool like *--tool_check_CH*, ANA will only perform
 that task and exit, so you won't get any output other than the output from the
 tool.
-2. You can redirect ANA standard output to a file like this:
+2. You can redirect ANA's volume output to a file like this:
 ```
-> ANA 1mtn.pdb -c 4.cfg -d mtn.nc -o salida > output_vol
+> ANA2 1mtn.pdb -c 4.cfg -d mtn.nc -f salida -v output_vol
 Writing output...
 Done
 ```
