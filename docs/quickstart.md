@@ -176,7 +176,7 @@ that task and exit, so you won't get any output other than the output from the
 tool.
 2. You can redirect ANA's volume output to a file like this:
 ```
-> ANA2 1mtn.pdb -c 4.cfg -d mtn.nc -f salida -v output_vol
+> ANA2 1mtn.pdb -c 4.cfg -d mtn.nc -f salida -o output_vol
 Writing output...
 Done
 ```
