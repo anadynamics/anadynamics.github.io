@@ -36,15 +36,17 @@ cmake .. -Wno-dev
 make -j 4
 ```
 The flag `-j` tells make to compile in parallel, most systems can spare 4 cores.
+
 ANA should work right away. Make sure the
 environment variable **LD_LIBRARY_PATH** includes the
-location where CGAL and Boost were installed, these are most likely: 
+location where CGAL and Boost were installed. For debian-based Linux distributions, these are most likely: 
  - */usr/lib*,
  - */usr/local/lib*
  - */usr/lib/x86_64-linux-gnu*
  - */usr/include/x86_64-linux-gnu*.
+
 You probably want to move the ANA executable to a path included in your *PATH*
-variable as, for example: */usr/local/bin*.
+variable as well. For example, in the case of a debian-based Linux distribution: */usr/local/bin*.
 
 ## Windows 
 
