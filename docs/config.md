@@ -47,7 +47,7 @@ Filename of output PDB displaying the included area.
 Read the input PDB and write 'include.ANA' file with the vertices of its convex hull.
 
     tool_pdb_norm,n
-Read the input PDB and renumber its atoms and residues. Write the output PDB to \tool_pdb_norm\.
+Read the input PDB and renumber its atoms and residues. Write the output PDB to tool_pdb_norm.
 
     tool_aa_to_ca,a
 Write Calpha atoms indices for the included residues to stdout.
