@@ -4,70 +4,112 @@ title: Configuration variables
 ---
 
 ## Terminal options
-    input_struct,s
+```
+input_struct,s
+```
 Input structure. This is the only positional argument so you can type it first and skip the flag.
 
-    input_md,d
+```
+input_md,d
+```
 Input file with MD simulation.
 
-    config_file,c
+```
+config_file,c
+```
 Filename of the configuration file.
 
-    include,f
+```
+include,f
+```
 Coordinates of the included area in .pdb format.
 
-    output_draw,f
+```
+output_draw,f
+```
 PDB output filename.
 
-    output_vol,o
+```
+output_vol,o
+```
 Volume output filename.
 
-    output_wall,w
+```
+output_wall,w
+```
 Cavity's wall atoms/residues output filename.
 
-    NDD_modes,M
+```
+NDD_modes,M
+```
 Input vectors for Non-Delaunay dynamics (NDD).
 
-    NDD_frequencies,F
+```
+NDD_frequencies,F
+```
 Input frequencies (in cm^-1) to calculate the flexibility index by NDD.
 
-    NDD_scaling,S
+```
+NDD_scaling,S
+```
 Input scaling factors for NDD. See ANA's manual to understand why they are necessary.
 
-    NDD_size,Z
+```
+NDD_size,Z
+```
 Scaling magnitude for the input vectors for NDD. Default: **1**.
 
-    NDD_output,O
+```
+NDD_output,O
+```
 Suffix for the NDD output file. The scaling magnitude will be the prefix.
 
-    tool_ch,t
+```
+tool_ch,t
+```
 Filename of output PDB displaying the included area.
 
-    tool_pdb_ch,p
+```
+tool_pdb_ch,p
+```
 Read the input PDB and write 'include.ANA' file with the vertices of its convex hull.
 
-    tool_pdb_norm,n
+```
+tool_pdb_norm,n
+```
 Read the input PDB and renumber its atoms and residues. Write the output PDB to tool_pdb_norm.
 
-    tool_aa_to_ca,a
+```
+tool_aa_to_ca,a
+```
 Write Calpha atoms indices for the included residues to stdout.
 
+```
     ver,v
+```
 Output version number.
 
-    help,h
+```
+help,h
+```
 Output help message.
 
 ## Configuration file options
 
 ### Included area options
-    included_area_residues
+```
+included_area_residues
+```
 Amino acids that delimit the convex hull of the included area. Numbers from 1 to 9999, separated by commas, spaces or tabs.
 
-    included_area_atoms
+```
+included_area_atoms
+```
 Atoms that delimit the convex hull of the included area. Numbers from 1 to 9999, separated by commas, spaces or tabs.
 
-    included_area_precision
+```
+included_area_precision
+```
  * **0**: keep all cells that intercede in the included area
  * **1**: only keep null areas that are within the included area.
  * Default: **0**.
@@ -78,34 +120,49 @@ sphere
 ```
 Read the input coordinates and write *include_sphere.ANA* file with the requested pseudo sphere.
 
-    cylinder
+```
+cylinder
+```
 Read the input coordinates and write *include_cylinder.ANA* file with the requested pseudo cylinder.
 
-    prism
+```
+prism
+```
 Read the input coordinates and write *include_prism.ANA* file with the requested prism.
 
 ### Useful options for outlining the desired cavity with ANA Static
 
-    included_residues
+```
+included_residues
+```
 Amino acids that line the desired cavity. Useful for discovering new cavities.
 
-    minimum_number_of_vertices_to_include
-Minimum number of wall atoms of the included amino acids.Default: **2**.
+```
+minimum_number_of_vertices_to_include
+```
+Minimum number of wall atoms of the included amino acids.
+ * Default: **2**.
 
 #### Clusters options
-    clusters_method
+```
+clusters_method
+```
 Define the method to clusterize cells.
  * **none**: don't group null areas.
  * **facets**: group null areas if the tetrahedrons share facets.
  * **boxes**: group null areas if the tetrahedrons bounding boxes intersect.
  * Default: **boxes**.
 
-    clusters_min_size
+```
+clusters_min_size
+```
 Minimum number of cells a cluster has to have to be included.
  * Default: **2**.
 
 #### Accessible Surface Area options
+```
     ASA_discard_method
+```
 Method for discarding cells according to solvent exposure.
  * **none**: don't discard.
  * **cm**: determine cells surroundings using the global CM as reference.
@@ -113,87 +170,127 @@ Method for discarding cells according to solvent exposure.
  * **axes**: determine cells surroundings using its centroid and cartesian axes as references.
  * Default: **cm**.
 
-    ASA_only_side
+```
+ASA_only_side
+```
 Which side to keep.
  * **inside**: keep inside nulls.
  * **outside**: keep outside nulls.
  * Default: **inside**.
 
-    ASA_exclude_residues
+```
+ASA_exclude_residues
+```
 Don't use these to discard ASA cells.
 
-    ASA_min_dot_pdt
+```
+ASA_min_dot_pdt
+```
 Minimum dot product to keep (discard) cell. As it increases more cells are classified as being outside.
  * Default: **0.7**.
 
-    ASA_max_dist
+```
+ASA_max_dist
+```
 Maximum distance between cell and Calpha used to keep cell. The bigger this number is the better (but slower) the process gets.
  * Default: **15**.
 
 ### MD options
-    start
+```
+start
+```
 Frame to begin reading at.
  * Default: **1**.
 
-    step
+```
+step
+```
 Step count to read trajectory frames. Note that only NetCDF files support this feature.
  * Default: **1**.
 
-    stop
+```
+stop
+```
 Frame to stop reading.
  * Default: **0**.
 
 ### NDD options
-    NDD_step
+```
+NDD_step
+```
 Number of steps in the NDD pipeline ANA will perform.
  * **1**: ANA will not perform the derivative and instead output 2 files with the volumes of the displaced cavity in the positive and the negative direction.
  * **2**: ANA will output the VGV.
  * **3**: ANA will output the flexibility index.
  * Default: **3**.
- 
-    NDD_modes_format
+
+``` 
+NDD_modes_format
+```
 Format of the input vectors.
  * **amber**: vectors will be read as Amber PCA modes.
- * row: vectors will be read in row major order.
- * column: vectors will be read in column major order.
+ * **row**: vectors will be read in row major order.
+ * **column**: vectors will be read in column major order.
  * Default: **row**.
 
-    NDD_frequences_scaling
+```
+NDD_frequences_scaling
+```
 If true ANA will scale the input vectors by their frequencies instead of automatically generating its own scaling factors.
  * Default: **false**.
 
 
 ### Output options
-    output_type
+```
+output_type
+```
 How to visualize output cavities.
  * **raw_pdb**: null areas as tetrahedrons.
  * **grid_pdb** null areas filled with points.
  * Default: **grid_pdb**.
 
-    sphere_count
-sphere count for grid output.
+```
+sphere_count
+```
+Sphere count for grid output.
  * Default: **5**.
 
-## Misc options    
-    min_vol_radius
+## Misc options
+```
+min_vol_radius
+```
 Radius of the sphere with the minimum volume to be taken into account.
 Default value: **1.4**.
 
-    max_area_radius
+```
+max_area_radius
+```
 Radius of the sphere with the maximum surface to be taken into account.
  * Default: **99**.
 
-    atom_only
+```
+atom_only
+```
 Triangulate only ATOM records.
  * Default: **true**.
 
-    list_wall
-**atom**: output a file with the wall atoms; **residue**: output a file with
-the wall amino acids; **none**: don't write wall file. Default value: **none**.
+```
+list_wall
+```
+Write the lining residues of the output cavity.
+ * **atom**: output a file with the wall atoms.
+ * **residue**: output a file with the wall amino acids.
+ * **none**: don't write wall file.
+ * Default value: **none**.
 
-    separator
-Separator character for wall residues or atoms. Default value: **\t**. 
+```
+separator
+```
+Separator character for wall residues or atoms.
+ * Default: **\t**. 
 
-    triangulate_only_included_aas
+```
+triangulate_only_included_aas
+```
 Instead of triangulating the whole molecule triangulate only the included amino acids
  * Default: **false**.
