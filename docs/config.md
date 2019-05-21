@@ -72,7 +72,10 @@ Atoms that delimit the convex hull of the included area. Numbers from 1 to 9999,
  * **1**: only keep null areas that are within the included area.
  * Default: **0**.
 
-    sphere
+
+```
+sphere
+```
 Read the input coordinates and write *include_sphere.ANA* file with the requested pseudo sphere.
 
     cylinder
