@@ -40,7 +40,7 @@ The flag `-j` tells make to compile in parallel, most systems can spare 4 cores.
 ANA should work right away. Make sure the
 environment variable **LD_LIBRARY_PATH** includes the
 location where CGAL and Boost were installed. For debian-based Linux distributions, these are most likely: 
- - */usr/lib*,
+ - */usr/lib*
  - */usr/local/lib*
  - */usr/lib/x86_64-linux-gnu*
  - */usr/include/x86_64-linux-gnu*.
