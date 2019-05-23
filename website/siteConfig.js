@@ -49,6 +49,10 @@ const siteConfig = {
     theme: 'default',
   },
   scripts: ['https://buttons.github.io/buttons.js'],
+  // Twitter
+  twitter: 'true',
+  twitterUsername: 'gpbarletta',
+  twitterImage: 'img/favicon.png',
   // You may provide arbitrary config keys to be used as needed by your template.
   repoUrl: 'https://github.com/anadynamics/anadynamics.github.io',
 };
