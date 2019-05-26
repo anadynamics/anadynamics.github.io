@@ -4,6 +4,7 @@ title: Installation instructions
 ---
 
 ANA and ANA GUI have been tested on Mac OSX 10.11 (El Capitan) and Ubuntu 16.04.
+ANA is written in C++17, so you'll need a supporting compiler.
 Instructions for these GNU-based systems are very similar.
 
 ## Dependencies
