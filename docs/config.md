@@ -77,7 +77,8 @@ Read the input PDB and write 'include.ANA' file with the vertices of its convex 
 ```
 tool_pdb_norm,n
 ```
-Read the input PDB and renumber its atoms and residues. Write the output PDB to tool_pdb_norm.
+Read the input PDB and renumber its atoms and residues.
+Be aware that his tool won't fix every error in your PDB. Writes the output PDB to tool_pdb_norm.
 
 ```
 tool_aa_to_ca,a
