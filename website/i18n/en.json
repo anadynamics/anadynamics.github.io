@@ -4,18 +4,36 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Easy pocket volume tracking",
-    "algorithms": "ANA algorithms",
-    "config": "Configuration variables",
-    "ana_users": "Who is ANA for?",
-    "Who is ANA for?": "Who is ANA for?",
-    "gui": "ANA GUI",
-    "install_instructions": "Installation instructions",
-    "quickstart": "Quickstart",
-    "Download": "Download",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "Manual": "Manual",
-    "Reference": "Reference"
+    "docs": {
+      "algorithms": {
+        "title": "ANA algorithms"
+      },
+      "config": {
+        "title": "Configuration variables"
+      },
+      "ana_users": {
+        "title": "Who is ANA for?",
+        "sidebar_label": "Who is ANA for?"
+      },
+      "gui": {
+        "title": "ANA GUI"
+      },
+      "install_instructions": {
+        "title": "Installation instructions"
+      },
+      "quickstart": {
+        "title": "Quickstart"
+      }
+    },
+    "links": {
+      "Download": "Download",
+      "Docs": "Docs",
+      "Blog": "Blog"
+    },
+    "categories": {
+      "Manual": "Manual",
+      "Reference": "Reference"
+    }
   },
   "pages-strings": {
     "Help Translate|recruit community translators for your project": "Help Translate",
