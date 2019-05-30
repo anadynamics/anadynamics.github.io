@@ -3,83 +3,51 @@ id: install_instructions
 title: Installation instructions
 ---
 
-First, get the binary or the source from the
-[Download](https://github.com/anadynamics/ANA/releases) section.
+ANA is written in C++17, so you'll need a supporting compiler.
 ANA and ANA GUI have been tested on Mac OSX 10.11 (El Capitan) and Ubuntu 16.04.
 Instructions for these GNU-based systems are very similar.
 
-
-## Linux
+## Dependencies
 First, download these dependencies:
+#### Linux
 ```
-sudo apt-get install cmake libnetcdf-dev libcgal-dev libboost-program-options1.58.0
+sudo apt-get install cmake libnetcdf-dev libcgal-dev libboost-program-optionsx.xx.x
 ```
-**cmake** is only necessary if you plan to build from sources. **libnetcdf-dev**
-to read Amber NetCDF trajectories. 
-ANA gets its input through the Program Options boost library, so you'll need
-**libboost-program-optionsX.XX.X**, *X.XX.X* being higher than *1.58.0*. 
-Finally, Triangulations are possible thanks the CGAL library in **libcgal-dev**.
+#### Mac OS X
 
-### Pre-compiled binaries.
-A pre-compiled binary file (ANA) for 64-bits Ubuntu are available on the
-[Download](https://github.com/anadynamics/ANA/releases) section.
-
-If the dependencies are met, ANA should work right away. Make sure the
-environment variable **LD_LIBRARY_PATH** includes the
-location where CGAL and Boost were installed, these are most likely: */usr/lib*,
-*/usr/local/lib*, */usr/lib/x86_64-linux-gnu* and */usr/include/x86_64-linux-gnu*.
-You probably want to move the ANA executable to a path included in your *PATH*
-variable as, for example, */usr/local/bin*.
-
-### Building from source.
-Source code is available on the
-[Download](https://github.com/anadynamics/ANA/releases) section. After
-installing the above dependencies, you are going to have to install
-[Chemfiles](http://chemfiles.org/chemfiles/latest/) too.
-Everything is set to install a local modified version inside the ANA folder that
-won't interfere with a potential global installation of the actual, official
-Chemfiles library.
-
-Inside the ANA folder, type:
-```
-cd chemfiles
-mkdir install
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=../install -DCHFL_SYSTEM_NETCDF=ON ..
-cmake --build .
-cmake --build . --target install
-```
-Then you can run the *deb_compile.sh* script:
-```
-cd ../../src
-./deb_compile.sh
-```
-And you'll get an ANA executable inside the ANA folder. You may change the location of the Chemfiles installation by modifying
-the **-DCMAKE_INSTALL_PREFIX** variable of the *cmake* command, and doing the same with the **ch_include**, **ch_lib** and **ch_static**
-variables inside the *deb_compile.sh* script.
-
-## Mac OS X
-
-Dependencies:
 ```
 brew tap homebrew/science
 brew install cmake netcdf cgal boost
 ```
-
-### Pre-compiled binaries
-
-Pre-compiled binary (macANA) file for Mac OS X on the 
-[Download](https://anadynamics.netlify.com/docs/install_instructions.html) section.
+ - **cmake** is necessary if you plan to build from sources.
+ - **libnetcdf-dev** to read Amber NetCDF trajectories. 
+ - ANA gets its input through the Program Options boost library, so you'll need
+**libboost-program-optionsX.XX.X**, *X.XX.X* being higher than *1.58.0*. 
+ - Finally, Triangulations are possible thanks the CGAL library in **libcgal-dev**.
 
 ### Building from source.
+Source code is available on the
+[Download](https://github.com/anadynamics/ANA2/releases) section. Or you can
+clone the repository:
+```
+git clone https://github.com/anadynamics/ANA2 --depth=1
+mkdir ANA2/build
+cd ANA2/build
+cmake .. -Wno-dev
+make -j 4
+```
+The flag `-j` tells make to compile in parallel, most systems can spare 4 cores.
 
-Instructions for building Chemfiles from source in Mac and Linux are the same.
-When you are done, you can run the *mac_compile.sh* script:
-```
-cd ../../src
-./mac_compile.sh
-```
+ANA should work right away. Make sure the
+environment variable **LD_LIBRARY_PATH** includes the
+location where CGAL and Boost were installed. For debian-based Linux distributions, these are most likely: 
+ - */usr/lib*
+ - */usr/local/lib*
+ - */usr/lib/x86_64-linux-gnu*
+ - */usr/include/x86_64-linux-gnu*.
+
+You probably want to move the ANA executable to a path included in your *PATH*
+variable as well. For example, in the case of a debian-based Linux distribution: */usr/local/bin*.
 
 ## Windows 
 

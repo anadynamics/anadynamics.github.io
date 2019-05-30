@@ -28,8 +28,8 @@ class Footer extends React.Component {
               <img
                 src={this.props.config.baseUrl + this.props.config.footerIcon}
                 alt={this.props.config.title}
-                width="120"
-                height="110"
+                width="68"
+                height="58"
               />
             )}
           </a>
@@ -47,31 +47,30 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://github.com/anadynamics">GitHub</a>
             <a
               className="github-button"
-              href={this.props.config.repoUrl}
+              href="https://github.com/anadynamics/ANA2"
+
+
               data-icon="octicon-star"
-              data-count-href="https://github.com/pgbarletta/anadynamics"
+              data-count-href="https://github.com/anadynamics/ANA2"
               data-show-count={true}
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
               Star
             </a>
+          {this.props.config.twitterUsername && (
+          <div className="social">
+          <a
+              href={`https://twitter.com/${this.props.config.twitterUsername}`}
+              className="twitter-follow-button">
+              Follow @{this.props.config.twitterUsername}
+          </a>
+          </div>
+          )}
           </div>
         </section>
 
-        <a
-          href="https://code.facebook.com/projects/"
-          target="_blank"
-          className="fbOpenSource">
-          <img
-            src={this.props.config.baseUrl + 'img/oss_logo.png'}
-            alt="Facebook Open Source"
-            width="170"
-            height="45"
-          />
-        </a>
         <section className="copyright">
          ANA is GPL licensed. Hacé lo q se te cante.
         </section>
