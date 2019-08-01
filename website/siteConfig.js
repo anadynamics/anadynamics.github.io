@@ -19,7 +19,7 @@ const users = [
 const siteConfig = {
   title: 'ANA' /* title for your website */,
   tagline: 'Easy pocket volume tracking',
-  url: 'https://anadynamics.netlify.com' /* your website url */,
+  url: 'https://ana.run' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   projectName: 'anadynamics',
   headerLinks: [
@@ -48,7 +48,7 @@ const siteConfig = {
     // Highlight.js theme to use for syntax highlighting in code blocks
     theme: 'default',
   },
-  scripts: ['https://buttons.github.io/buttons.js'],
+  scripts: ['https://buttons.github.io/buttons.js', '../js/disqus.js'],
   // Twitter
   twitter: 'true',
   twitterUsername: 'gpbarletta',
