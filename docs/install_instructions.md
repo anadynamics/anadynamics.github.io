@@ -11,8 +11,12 @@ Instructions for these GNU-based systems are very similar.
 First, download these dependencies:
 #### Linux
 ```
-sudo apt-get install cmake libnetcdf-dev libcgal-dev libboost-program-optionsx.xx.x
+sudo apt-get install cmake libnetcdf-dev libcgal-dev libboost-dev
 ```
+We only need the _Program Options_ library from the boost libraries, so you can replace 
+`libboost-dev` for `libboost-program-optionsx.xx.x` where *x.xx.x* is the current version
+available in your package manager.
+
 #### Mac OS X
 
 ```
