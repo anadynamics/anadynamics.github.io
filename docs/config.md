@@ -43,7 +43,7 @@ NDD_frequencies, F
 ```
 NDD_scaling, S
 ```
- Input scaling factors for NDD. See ANA's manual to understand why they are necessary.
+ Input scaling factors for NDD. See ANA's manual to understand why you may want to use them.
 ```
 NDD_size, Z
 ```
