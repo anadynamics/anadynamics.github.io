@@ -8,9 +8,9 @@ title: Quickstart
 Let's start with an easy example of what a typical use case would be like.
 We'll be calculating the volume of the main cavity of a truncated haemoglobin along
 a **very** short trajectory.
-You can get all files used in this example [here](https://www.dropbox.com/sh/9xnbbap2aqyoepp/AACvXFgeN1JZKpel4BQmiBrna?dl=0).
+You can get all files used in this example [here](https://github.com/anadynamics/ANA2/tree/master/aux/quickstart).
 
-![](assets/quickstart/pic_0_mtn.png)
+![](assets/quickstart/quickstart_1.png)
 
 You can imagine that the pocket we are after is the one delimited by those 4 
 α-helices. The exact definition of a pocket is hard to define (probaly
