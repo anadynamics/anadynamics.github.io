@@ -42,10 +42,10 @@ that surround it and a first approach to get them is to get what ana calls
 *wall residues* or *wall atoms*.
 In order to get them, we have to write our first configuration file. ANA
 configuration files are just plain text files where each line is composed of an
-option, followed by a '=' character, and the appropiate arguments. So we will
+option, followed by a '=' character, and the appropriate arguments. So we will
 create a new file, write the following contentents in it and call it
 **config_1.cfg**. The **.cfg** extension tells the VIM editor this is a config
-file, so VIM can provide appropiate highlighting. This is a nice-to-have, but is
+file, so VIM can provide appropriate highlighting. This is a nice-to-have, but is
 not necessary, ANA can't tell the difference.
 
 ```
@@ -167,7 +167,7 @@ info about this, check the relevant [paper](https://pubs.acs.org/doi/10.1021/acs
 We re-run the check to see the resulting convex hull:
 
 ```
-> AN2 input_pdb.pdb -c config_4.cfg -f 1_cavity -t ch_4_testing
+> ANA2 input_pdb.pdb -c config_4.cfg -f 1_cavity -t ch_4_testing
 ```
 and load the *ch_4_testing.pdb* file on pymol:
 
@@ -177,7 +177,7 @@ We're now ready to track our pocket. We use the *-d* flag (think of dynamics)
 to include the trajectory
 
 ```
-> AN2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -f 5_cavity
+> ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -o 5_cavity
 
 Frame 1 87.2512
 Frame 2 54.1299
@@ -208,7 +208,7 @@ Using the *-t* flag you can see how the Included Area changed during the
 trajectory, following the listed residues.
 
 ```
-> ANA2 input_pdb.pdb -c config_4.cfg -d mtn.nc -f cavity -t ch_5_testing
+> ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -f cavity -t ch_5_testing
 ```
 
 The output of *-t* is also a trajectory file (in the PDB format). If we
@@ -237,7 +237,7 @@ that particular tool.
 
 2. You can redirect ANA's volume output to a file like this:
 ```
-> ANA2 input_pdb.pdb -c config_4.cfg -d mtn.nc -f cavity -o output_vol
+> ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -f 5_cavity -o output_vol
 Writing output...
 Done
 ```
