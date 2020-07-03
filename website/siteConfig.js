@@ -17,15 +17,14 @@ const users = [
 ];
 
 const siteConfig = {
-  title: 'ANA' /* title for your website */,
-  tagline: 'Easy pocket volume tracking',
+  title: 'Analysis of Null Areas' /* title for your website */,
+  tagline: 'Volume and flexibility calculation for protein cavities',
   url: 'https://ana.run' /* your website url */,
   baseUrl: '/' /* base url for your project */,
   projectName: 'anadynamics',
   headerLinks: [
     {doc: 'install_instructions', label: 'Download'},
     {doc: 'ana_users', label: 'Docs'},
-    {blog: true, label: 'Blog'},
   ],
   users,
   /* path to images for header/footer */

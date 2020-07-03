@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Manual": ["ana_users", "install_instructions", "quickstart", "gui"],
-    "Reference": ["config", "algorithms"]
+    "Manual": ["ana_users", "install_instructions", "quickstart", "dynamics", "flexibility"],
+    "Reference": ["config", "supported_formats"]
   }
 }

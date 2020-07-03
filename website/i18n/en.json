@@ -3,11 +3,8 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "Easy pocket volume tracking",
+    "tagline": "Volume and flexibility calculation for protein cavities",
     "docs": {
-      "algorithms": {
-        "title": "ANA algorithms"
-      },
       "config": {
         "title": "Configuration variables"
       },
@@ -15,20 +12,25 @@
         "title": "Who is ANA for?",
         "sidebar_label": "Who is ANA for?"
       },
-      "gui": {
-        "title": "ANA GUI"
+      "dynamics": {
+        "title": "Dynamics tutorial"
+      },
+      "flexibility": {
+        "title": "Flexibility Index"
       },
       "install_instructions": {
         "title": "Installation instructions"
       },
       "quickstart": {
         "title": "Quickstart"
+      },
+      "supported_formats": {
+        "title": "Supported formats"
       }
     },
     "links": {
       "Download": "Download",
-      "Docs": "Docs",
-      "Blog": "Blog"
+      "Docs": "Docs"
     },
     "categories": {
       "Manual": "Manual",

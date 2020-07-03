@@ -98,56 +98,62 @@ const Block = props => (
           title : 'Fast',
         },
                              {
-                               content : 'Easy manual cavity definition.',
+                               content : 'Define your cavity manually by listing the lining residues',
                                image : imgUrl('1hvr_apo_ch.png'),
                                imageAlign : 'top',
-                               title : 'Targeted',
+                               title : 'Maximum control',
                              },
                              {
-                               content : 'Even easier.',
-                               image : imgUrl('gui_cut.png'),
+                               content : 'Follow cavity changes along large conformational changes',
+                               image : imgUrl('adaptive.png'),
                                imageAlign : 'top',
-                               title : 'GUI available',
+                               title : 'Adaptive cavity definition',
                              },
                              {
                                content :
-                                   'Perform Non-Delaunay Dynamics analysis.',
+                                   'Predict flexibility using a set of collective coordinates as Normal Modes or Principal Components',
                                image : imgUrl('abstract_fig_cut.png'),
                                imageAlign : 'top',
-                               title : 'Supports NDD',
+                               title : 'Cavity flexibility',
                              },
     ]}</Block>
 );
 
-const LearnHow = props => (
+const Static = props => (
   <Block background="light">
     {[
       {
-        content: 'In the [Docs](/docs/ana_users.html) section',
+        content: 'Learn the basics ANA in ~5 minutes. From discovering new \
+cavities, to defining your own cavity and tracking it along a Molecular \
+Dynamics trajectory. Check the [Docs](/docs/quickstart.html) section',
         image: imgUrl('config_example.png'),
         imageAlign: 'right',
-        title: 'Learn How',
+        title: 'Static',
       },
     ]}
   </Block>);
 
-    const TryOut = props => (<Block id = "try">{[{
-      content : '[Download](/docs/install_instructions.html) now.',
+    const Dynamics = props => (<Block id = "try">{[{
+      content : 'Track a cavity along a full Molecular Dynamics trajectory, ANA is \
+fast enough to do it. ANA supports the popular MD formats as Amber\'s NetCDF and \
+GROMACS .trr, .trj and .gro. Check an [example](/docs/dynamics.html) in the Docs section.',
       image : imgUrl('tetra_vdw_filled.png'),
       imageAlign : 'left',
-      title : 'Try it Out',
+      title : 'Dynamics',
     },
     ]}</Block>
 );
 
-const Description = props => (
+const Flexibility = props => (
   <Block background="dark">
     {[
       {
-        content: 'As seen on \"Protein Fluctuations and Cavity Changes Relationship\" by Barletta & Fernandez-Alberti. Check [this](/blog) example on the blog.',
+        content: 'Calculate the flexibility of a protein cavity as seen on \
+\"Protein Fluctuations and Cavity Changes Relationship\" by Barletta & Fernandez-Alberti. \
+Check [this](/docs/flexibility.html) example on the Docs section.',
         image: imgUrl('abstract_fig.png'),
         imageAlign: 'right',
-        title: 'Non-Delaunay Dynamics',
+        title: 'Flexibility Index',
       },
     ]}
   </Block>);
@@ -178,9 +184,9 @@ const Description = props => (
       language} />
         <div className="mainContainer">
           <Features />
-          <LearnHow />
-          <TryOut />
-          <Description />
+          <Static />
+          <Dynamics />
+          <Flexibility />
           <Showcase language={
       language} />
         </div>
