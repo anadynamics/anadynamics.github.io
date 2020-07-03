@@ -59,5 +59,4 @@ ANA and its dependencies (Chemfiles, CGAL and Boost) also work on Windows but
 there is currently no pre-compiled binary for Windows. 
 An alternative is to run ANA inside the Windows 10 Bash environment.
 
-# ANAGUI
-ANAGUI is a React based app, you can download it from [here](https://github.com/anadynamics/ANAGUI/releases).
+
