@@ -8,7 +8,7 @@ we now turn our attention to a few other details and options you might find usef
 As before, you can get all files used in this example [here](https://github.com/anadynamics/ANA2/tree/master/aux/dynamics).
 
 We have a Lipid Binding Protein (LBP) from a recent [paper](https://pubmed.ncbi.nlm.nih.gov/31365253/)
-(PDB ID: 4XCP) bound to one of its natural ligands, palmitate (PLM). The main cavity of this LBP has
+(PDB ID: **4XCP**) bound to one of its natural ligands, palmitate (PLM). The main cavity of this LBP has
 some unusual behaviour, but we'll leave that for the [Flexibility](flexibility.html) tutorial and just
 focus on tracking its volume along two 100 frames long trajectories. They were extracted from the same, very, long
 trajectory at different times, we'll refer to them as the High Volume (**HV**) and Low Volume (**LV**) trajectories
