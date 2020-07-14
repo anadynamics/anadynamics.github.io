@@ -26,6 +26,9 @@
       },
       "supported_formats": {
         "title": "Supported formats"
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting"
       }
     },
     "links": {
