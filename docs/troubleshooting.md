@@ -5,9 +5,7 @@ title: Troubleshooting
 
 ## Ubuntu linux installing
 
-### Errors when running CMake
-
-#### The imported target "CGAL::CGAL_Qt5" references the file "/usr/lib/x86_64-linux-gnu/libCGAL_Qt5.so.11.0.1" but this file does not exist...
+### The imported target "CGAL::CGAL_Qt5" references the file "/usr/lib/x86_64-linux-gnu/libCGAL_Qt5.so.11.0.1" but this file does not exist...
 
 Some Ubuntu versions have a failed CMakeLists.txt. This line should fix it:
 
@@ -15,7 +13,7 @@ Some Ubuntu versions have a failed CMakeLists.txt. This line should fix it:
 sudo apt-get install libcgal-qt5-dev
 ```
 
-#### target_compile_features specified unknown feature "cxx_std_17" for target "ANA2"
+### target_compile_features specified unknown feature "cxx_std_17" for target "ANA2"
 
 This shows up if you have a very old gcc compiler. ANA is written in C++17 and C++17 features are available since GCC 5, gcc's current version
 is 10.1.

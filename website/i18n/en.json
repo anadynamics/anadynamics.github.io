@@ -21,6 +21,9 @@
       "install_instructions": {
         "title": "Installation instructions"
       },
+      "nma_flexibility": {
+        "title": "Normal Modes Analysis & Flexibility Index"
+      },
       "quickstart": {
         "title": "Quickstart"
       },
