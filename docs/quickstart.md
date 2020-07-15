@@ -38,12 +38,12 @@ we'll choose that one. We can also guess there should be more empy space under
 it but for some reason ANA is not showing it. We'll see how to fix this.
 
 In order to draw an Included Area to track this pocket, we need the residues
-that surround it and a first approach to get them is to get what ana calls
+that surround it and a first approach to get them is to get what ANA calls
 *wall residues* or *wall atoms*.
 In order to get them, we have to write our first configuration file. ANA
 configuration files are just plain text files where each line is composed of an
 option, followed by a '=' character, and the appropriate arguments. So we will
-create a new file, write the following contentents in it and call it
+create a new file, write the following contents in it and call it
 **config_1.cfg**. The **.cfg** extension tells the VIM editor this is a config
 file, so VIM can provide appropriate highlighting. This is a nice-to-have, but is
 not necessary, ANA can't tell the difference.
@@ -116,15 +116,15 @@ RESI |  10      50      51      54      56      71      72      75      104     
 -------------  
 ```
 
-Now, let's paste this list in a new configuration file to draw an Included Area.
+Now, let's paste this list in a new configuration file (**config_3.cfg**) to draw an Included Area.
 
 ```
 included_area_residues = 28      29      32      33      45      46      49      54      57      58      60      61      62      72      77      80      81      84      86      90      94      98      119     122     128 
 ```
 
-and run it using the *--tool_check_CH* or *-t* flag. This will draw the convex
+and run it using the `--tool_check_CH` or `-t` flag. This will draw the convex
 hull obtained by triangulating the alpha carbons from the residues listed in the 
-*included_area_residues* variable. Note that whenever we use this flag, ANA
+`included_area_residues` variable. Note that whenever we use this flag, ANA
 will skip the cavity calculation and just calculate the Included Area Convex
 Hull and write it into a PDB file with the name of our choosing, in this case:
 **ch_3_testing.pdb**.
@@ -132,7 +132,7 @@ Hull and write it into a PDB file with the name of our choosing, in this case:
 ```
 > ANA2 input_pdb.pdb -c config_3.cfg -f 1_cavity -t ch_3_testing
 ```
-If we load the *ch_3_testing.pdb* file on pymol, we'll see something like this:
+If we load the **ch_3_testing.pdb** file on pymol, we'll see something like this:
 
 ![](assets/quickstart/quickstart_4.png)
 
@@ -146,18 +146,18 @@ remove it from the list. And if you want to include an area that's being
 discarded, include a few of the residues that surround it.
 
 Also, you don't want too many unnecessary residues listed in the
-*included_area_residues* variable since this will result in a minor, though
+**included_area_residues** variable since this will result in a minor, though
 unnecessary, overhead.
 
 After pruning the list (removing several residues and adding new ones to
-get a more elongated cavity), we are left with this new config file:
+get a more elongated cavity), we are left with this new config file, **config_4.cfg**:
 
 ```
 included_area_residues = 25      29      36      49      54      57      58      65      81      90      94      102      115     122     128 
 included_area_precision = 1
 ```
 
-As you can see, I added a new option: `included_area_precision`. When this
+As you can see, there's a new option: `included_area_precision`. When this
 option is set to `0`, ANA will triangulate the whole molecule and then discard
 the tetrahedrons that don't intersect the Included Area. But if it's set to
 `1`, it will also perform intersections between the Included Area and those
@@ -169,12 +169,14 @@ We re-run the check to see the resulting convex hull:
 ```
 > ANA2 input_pdb.pdb -c config_4.cfg -f 1_cavity -t ch_4_testing
 ```
-and load the *ch_4_testing.pdb* file on pymol:
+and load the **ch_4_testing.pdb** file on pymol:
 
 ![](assets/quickstart/quickstart_5.png)
 
-We're now ready to track our pocket. We use the *-d* flag (think of dynamics)
-to include the trajectory
+We're now ready to track our pocket along a Molecular Dynamics trajectory. Our
+trajectory is in the Amber NetCDF format, but ANA can read from other popular
+formats such as .gro, .trr or .xtc. 
+We use the `-d` flag (think of dynamics) to include the trajectory
 
 ```
 > ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -o 5_cavity
@@ -204,17 +206,18 @@ Done
 ```
 
 And now *5_cavity.pdb* is a trajectory file with our pocket dynamics. 
-Using the *-t* flag you can see how the Included Area changed during the
+Using the `-t` flag you can see how the Included Area changed during the
 trajectory, following the listed residues.
 
 ```
 > ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -f cavity -t ch_5_testing
 ```
 
-The output of *-t* is also a trajectory file (in the PDB format). If we
+The output of `-t` is also a trajectory file (in the PDB format). If we
 load it, we can see the differences between the original (purple) static convex
-hull and the dynamic one (green). In sand colored cartoon representation,
-you can see a random frame from the trajectory:
+hull and the dynamic one (green) from a random frame. In sand colored cartoon
+representation, you can see our protein from the same random frame from the
+trajectory:
 
 ![](assets/quickstart/quickstart_6.png)
 
