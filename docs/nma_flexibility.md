@@ -4,16 +4,16 @@ title: Normal Modes Analysis & Flexibility Index
 ---
 
 Let's say you have a few structures and you want to characterize the flexibility of their cavities, but you
-can't run MD or NMA, at least not locally. You can always upload your PDBs at Bahar's [server](http://anm.csb.pitt.edu/) and get
+can't run MD or NMA, at least not locally. You can always upload your PDBs at Bahar's [**server**](http://anm.csb.pitt.edu/) and get
 the first, say, 20 normal modes and their frequencies and then use ANA to calculate the cavitties flexibilities.
-In this tutorial, we're going to do just that. As always, all the files are available [online](https://github.com/anadynamics/ANA2/tree/master/aux/bahar_dynein).
+In this tutorial, we're going to do just that. As always, all the files are available [**online**](https://github.com/anadynamics/ANA2/tree/master/aux/bahar_dynein).
 
 We will be using the same dynein structures we used on the [previous tutorial](flexibility.html), just to be sure we're not getting
 the wrong results.
 
 ## NMA using Bahar's server
 
-We upload **lc8.pdb** to the [server](http://anm.csb.pitt.edu/) and run the calculations without changing the defaults, just to be quick.
+We upload **lc8.pdb** to the [**server**](http://anm.csb.pitt.edu/) and run the calculations without changing the defaults, just to be quick.
 
 ![](assets/nma_flexibility/server_1.png)
 

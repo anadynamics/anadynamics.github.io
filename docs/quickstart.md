@@ -6,7 +6,7 @@ title: Quickstart
 Let's start with an easy example of what a typical use case would be like.
 We'll be calculating the volume of the main cavity of an Odorant Binding Protein along
 a **very** short trajectory.
-You can get all files used in this example [here](https://github.com/anadynamics/ANA2/tree/master/aux/quickstart).
+You can get all files used in this example [**here**](https://github.com/anadynamics/ANA2/tree/master/aux/quickstart).
 
 ![](assets/quickstart/quickstart_1.png)
 
@@ -162,7 +162,7 @@ option is set to `0`, ANA will triangulate the whole molecule and then discard
 the tetrahedrons that don't intersect the Included Area. But if it's set to
 `1`, it will also perform intersections between the Included Area and those
 tetrahedrons that are not completely enclosed by the Included Area. For more
-info about this, check the relevant [paper](https://pubs.acs.org/doi/10.1021/acs.jctc.7b00744#:~:text=We%20make%20use%20of%20variations,volume%20exhibit%20more%20flexible%20cavities.).
+info about this, check the relevant [**paper**](https://pubs.acs.org/doi/10.1021/acs.jctc.7b00744#:~:text=We%20make%20use%20of%20variations,volume%20exhibit%20more%20flexible%20cavities.).
 
 We re-run the check to see the resulting convex hull:
 

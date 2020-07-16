@@ -8,14 +8,14 @@ ANA allows to quantify the flexibility of a cavity using a PDB structure and a s
 run, or a Normal Mode Analysis (NMA) of a protein PDB structure, but the calculation itself doesn't change between
 them: ANA will displace the protein cavity along each vector and calculate its effect on the total volume, by
 summing up all the effects on the cavity ANA can quantify the overall flexibility of the cavity.
-As always, all the files are available [online](https://github.com/anadynamics/ANA2/tree/master/aux/flexibility).
+As always, all the files are available [**online**](https://github.com/anadynamics/ANA2/tree/master/aux/flexibility).
 
 ## Based on Principal Component Analysis from a Molecular Dynamics trajectory
 
 Since ANA is able to read vectors and frequencies from the Amber file format and output absolute
 values of flexibility when these where obtained under the quasi-harmonic model, we'll first check an example
 of this specific case. For more information on these types of analysis, you can check Case's
-[paper](https://pubs.acs.org/doi/abs/10.1021/j100384a021).
+[**paper**](https://pubs.acs.org/doi/abs/10.1021/j100384a021).
 
 We continue our previous work with the Lipid Binding Proteins from the [Flexibility](flexibility.html) tutorial. 
 If you're familiarized with LBPs you might have been surprised to see a pure α-helix LBP. Indeed, these are
@@ -31,7 +31,7 @@ its ligand-free form and a β-sheet LBP?
 
 We start with our cavities defined for us and ANA set to High precision (`included_area_precision = 1`), so let's
 focus on the flexibility specific options. Flexibility calculations are based on the Non-Delaunay Dynamics
-method (described [here](https://doi.org/10.1021/acs.jctc.7b00744)), so all their specific options begin
+method (described [**here**](https://doi.org/10.1021/acs.jctc.7b00744)), so all their specific options begin
 with **NDD_**. Both configuration files (**config_alfa.cfg** and **config_beta.cfg**) have these 3 lines:
 
 ```
@@ -99,7 +99,7 @@ LBP and see the opposite result. Not only it doesn't become more rigid, this LBP
 biding palmitate.
 
 This is just an example, we won't get into why this happens and why such a behaviour would be desirable for an organism.
-If you want to know more about these LBPs, you can check the relevant [paper](https://doi.org/10.1021/acs.jcim.9b00364).
+If you want to know more about these LBPs, you can check the relevant [**paper**](https://doi.org/10.1021/acs.jcim.9b00364).
 
 ## Based on Normal Mode Analysis
 
@@ -141,7 +141,11 @@ The execution lines are inside the **./step_1.sh** file:
 ```
 ANA2 lc8.pdb -c ecf.cfg -M modes_lc8 -F frequencies_lc8
 
-ANA2 lc8.pdb -c edf.cfg -M modes_lc8 -F frequencies_lc8
+ANA2 lc8.pdb -c edf.cfg -M have to modify the list of residues to define a proper cavity using the convex
+have to modify the list of residues to define a proper cavity using the convex
+have to modify the list of residues to define a proper cavity using the convex
+have to modify the list of residues to define a proper cavity using the convex
+modes_lc8 -F frequencies_lc8
 
 ANA2 tctex.pdb -c acb.cfg -M modes_tctex -F frequencies_tctex
 
