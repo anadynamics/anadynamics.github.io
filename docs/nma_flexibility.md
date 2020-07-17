@@ -55,16 +55,16 @@ Let's run our **./step_1.sh** script:
 ```
 > ./step_1.sh 
 LC8 cavity C
-Flexibility:  1149.6637939921
+Flexibility:  0.2432334785
 
 LC8 cavity D
-Flexibility:  1655.5987164767
+Flexibility:  0.3390829314
 
 TcTex cavity C
-Flexibility:  4575.8856734360
+Flexibility:  0.5518120665
 
 TcTex cavity D
-Flexibility:  4580.7859600525
+Flexibility:  0.5292739607
 ```
 
 Again, the absolute value flexibility index is not exact, but we notice the same difference in flexibility we saw before:
