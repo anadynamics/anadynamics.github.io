@@ -153,7 +153,7 @@ const Flexibility = props => (
 Check [this](/docs/flexibility.html) example on the Docs section.',
         image: imgUrl('abstract_fig.png'),
         imageAlign: 'right',
-        title: 'Flexibility Index',
+        title: 'Flexibility',
       },
     ]}
   </Block>);

@@ -16,13 +16,13 @@
         "title": "Dynamics tutorial"
       },
       "flexibility": {
-        "title": "Flexibility Index"
+        "title": "Flexibility"
       },
       "install_instructions": {
         "title": "Installation instructions"
       },
       "nma_flexibility": {
-        "title": "Normal Modes Analysis & Flexibility Index"
+        "title": "Normal Modes Analysis & Flexibility"
       },
       "quickstart": {
         "title": "Quickstart"
