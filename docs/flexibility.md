@@ -1,7 +1,9 @@
 ---
 id: flexibility
-title: Flexibility Index
+title: Flexibility
 ---
+
+**Along this tutorial we will be referring to PCA and NMA vectors as "vectors", "modes" and "collective coordinates", indistinctly.**
 
 ANA allows to quantify the flexibility of a cavity using a PDB structure and a set of collective coordinates
 (vectors) and their frequencies. These two may come from either an analysis of a Molecular Dynamics
@@ -61,7 +63,7 @@ If we wanted to perform just the first steps, then we would have to specify the 
 `NDD_output`, since we will be getting 2 vectors with the displaced volumes (if `NDD_step = 1`) or the VGV
 (when `NDD_output = 2`). Since `NDD_step = 3` ANA will just output the flexibility to the console.
 
-We now turn out attentino to the **step_1.sh** script file:
+We now turn our attention to the **step_1.sh** script file:
 
 ```
 ANA2 avg_4uet.pdb -c config_alfa.cfg -M modes_4uet -Z 5
@@ -87,31 +89,43 @@ This is the output we get from **step_1.sh**:
 ```
 > ./step_1.sh 
 Beta without ligand
-Flexibility:  0.4143303855
+Rigidity:  17.0524105435
 
 Beta with ligand
-Flexibility:  0.2663154032
+Rigidity:  26.5299406277
 
 Alpha without ligand
-Flexibility:  0.1806277908
+Rigidity:  39.1154196453
 
 Alpha with ligand
-Flexibility:  0.2247477615
+Rigidity:  31.4367172631
 ```
 
-ANA gave us a parameter representing the flexibility of each protein's cavity. To do this, ANA obtained the 
-previously described VGV and calculated how much the potential energy of the protein would change if it displaced
-1 arbitrary unit along that direction. The lower the change of energy, the higher the flexibility since this
-means the protein doesn't need much energy to change the volume of its cavity. ANA reports the inverse of this
-energy change as a measure of the flexibility of the cavity.
-
-So, looking at the reported flexibility indices we can see that the all β-sheet LBP becomes quite more rigid when
-binding its ligand, this is not a rare phenomenon and what we would expect from any random protein+ligand system.
+ANA gave us a parameter representing the rigidity of each protein's cavity; the lower, the more flexible the cavity is.
+So, looking at the reported flexibility we can see that the all β-sheet LBP becomes quite more rigid when
+binding its ligand, this is not a rare phenomenon and is what we would expect from any random protein+ligand system.
 The unexpected happens when we try to do the same with the all α-helix LBP and see the opposite result.
 Not only it doesn't become more rigid, this LBP becomes a bit more flexible after biding palmitate.
 
 This is just an example, we won't get into why this happens and why such a behaviour would be desirable for an organism.
 More details about this particular system can be found [**elsewhere**](https://doi.org/10.1021/acs.jcim.9b00364).
+
+### Physical meaning of the rigidity result
+
+Both PCA and NMA assume the protein's movements along the collective coordinates are harmonic. Therefore,
+the protein's cavity would also change harmonically and its energy change would follow the hamonic potential energy equation:
+
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;U=\frac{1}{2} k \Delta X" title="harmonique_u" />
+
+where,
+
+- *U*: cavity's potential energy
+- *k*: spring constant
+- *ΔX*: displacement along the VGV
+
+ANA reports the spring constant ---in units of *KJ/mol*---, as a measure of the cavity's rigidity (or flexibility).
+For a given magnitud of potential energy, the lower this value is, the higher the displacement along the VGV will be.
+That is, the more flexible the cavity will be.
 
 ## Based on Normal Mode Analysis
 
@@ -163,33 +177,30 @@ ANA2 tctex.pdb -c acb.cfg -M modes_tctex -F frequencies_tctex
 ANA2 tctex.pdb -c adb.cfg -M modes_tctex -F frequencies_tctex
 ```
 
-We see a new flag `-F`, this points ANA to the file with the frequencies. Also, we  discarded the `-Z` flag
-because we don't trust the frequencies we have to be exact. These come in unknow units so we don't
-really worry much about the absolute flexibility indices we get, we just care about the comparisons we can make and
-since both structures, **lc8.pdb** and **tctex.pdb**, come from the same experiment, we can trust the frequencies
-to have relative meaning.
+We see a new flag `-F`, this points ANA to the file with the frequencies. While Amber frequencies come in units
+of *1/cm*, when `NDD_modes_format` is set to `column`, ANA will assume this frequencies come in units of *1/s^2*.
+Proper unit treatment is good, but we just care about the comparisons we can make and since both structures,
+**lc8.pdb** and **tctex.pdb**, come from the same experiment, we can trust the frequencies to have relative meaning.
 
 Let's run our **./step_1.sh** script:
 
 ```
 > ./step_1.sh 
 LC8 cavity C
-Flexibility:  0.0682823876
+Rigidity:  14.4987643740
 
 LC8 cavity D
-Flexibility:  0.0666958518
+Rigidity:  14.9998844721
 
 TcTex cavity C
-Flexibility:  0.0740250804
+Rigidity:  12.3797292878
 
 TcTex cavity D
-Flexibility:  0.0713922904
+Rigidity:  13.2121455156
 ```
 
-As we said, the frequencies we're getting are not in cm^-1, which is the unit ANA expects them to be, so the
-flexibility index is not exact. But we can still notice the difference: TcTex1 has more flexible cavities and
-that could account for the lack of a regular expression of the SLMs it can bind to. Indeed, we were able to
-capture this higher flexibility in MD runs (not published).
+We can see that TcTex1's cavity is a bit more flexible and that could account for the lack of a regular expression
+of the SLMs it can bind to. Indeed, we were able to capture this higher flexibility in MD runs (not published).
 
 
 ### Addendum

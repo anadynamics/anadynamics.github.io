@@ -1,6 +1,6 @@
 ---
 id: nma_flexibility
-title: Normal Modes Analysis & Flexibility Index
+title: Normal Modes Analysis & Flexibility
 ---
 
 Let's say you have a few structures and you want to characterize the flexibility of their cavities, but you
@@ -33,7 +33,7 @@ the last 10 rows since, for some reason, the server gave us 20 eigenvectors and 
 we have 20 eigenvectors (in the properly formatted **modes_lc8** file) and 20 eigenvalues in the **frequencies_lc8** file.
 We do the same for the tctex homodimer and get another two files: **modes_tctex** and **frequencies_tctex**.
 
-## Flexibility Index
+## Flexibility
 
 We now have the vectors and the frequencies of both homodimers. Those are the only new files with respect to
 the previous tutorial. The structures are the same, so the cavities are the same and ANA's configuration files too.
@@ -55,21 +55,21 @@ Let's run our **./step_1.sh** script:
 ```
 > ./step_1.sh 
 LC8 cavity C
-Flexibility:  0.2432334785
+Rigidity:  4.0808210217
 
 LC8 cavity D
-Flexibility:  0.3390829314
+Rigidity:  3.8639151884
 
 TcTex cavity C
-Flexibility:  0.5518120665
+Rigidity:  1.8122111870
 
 TcTex cavity D
-Flexibility:  0.5292739607
+Rigidity:  1.8893806879
 ```
 
-Again, the absolute value flexibility index is not exact, but we notice the same difference in flexibility we saw before:
-TcTex1 has more flexible cavities than LC8.
-
-Notice that this time we only used 20 vectors and 20 frequencies, instead of the whole set of collective coordinates
-(504 for LC8 and 576 for TcTex1), as we did in the [previous tutorial](flexibility.html). Yet, we still got the same result.
-This is because we used the first 20 normal modes, the ones with the lowest frequencies and more biological relevance.
+And we see the same difference in flexibility we saw before: TcTex1 has more flexible cavities than LC8.
+But we also notice the rigidities are much lower this time. This is because we only used 20 vectors and 20 frequencies
+instead of the whole set of collective coordinates (504 for LC8 and 576 for TcTex1),
+as we did in the [previous tutorial](flexibility.html).
+Yet, we still got the same result since we used the first 20 normal modes,
+the ones with the lowest frequencies and more biological relevance.
