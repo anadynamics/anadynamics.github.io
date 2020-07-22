@@ -57,7 +57,8 @@ the volumes between each pair of displaced structures. Partial derivatives are t
 **Volume Gradient Vector** (**VGV**). This VGV corresponds to the direction of maximum cavity volume change and
 is given as vector expressed on the basis of PCA modes.
 3. In the third and final step, ANA makes use of the VGV vector and the input frequencies to calculate the flexibility
-of the cavity.
+of the cavity. When `NDD_modes_format` is set to `amber`, ANA will assume these frequencies come in units of *1/cm*.
+
 
 If we wanted to perform just the first steps, then we would have to specify the terminal option
 `NDD_output`, since we will be getting 2 vectors with the displaced volumes (if `NDD_step = 1`) or the VGV
@@ -102,12 +103,7 @@ Rigidity:  31.4367172631
 ```
 
 ANA gave us a parameter representing the rigidity of each protein's cavity; the lower, the more flexible the cavity is.
-So, looking at the reported flexibility we can see that the all β-sheet LBP becomes quite more rigid when
-binding its ligand, this is not a rare phenomenon and is what we would expect from any random protein+ligand system.
-The unexpected happens when we try to do the same with the all α-helix LBP and see the opposite result.
-Not only it doesn't become more rigid, this LBP becomes a bit more flexible after biding palmitate.
-
-This is just an example, we won't get into why this happens and why such a behaviour would be desirable for an organism.
+So, while B-sheet LBP becomes more rigid when binding its ligand, the α-helix LBP becomes more flexible.
 More details about this particular system can be found [**elsewhere**](https://doi.org/10.1021/acs.jcim.9b00364).
 
 ### Physical meaning of the rigidity result
@@ -115,15 +111,16 @@ More details about this particular system can be found [**elsewhere**](https://d
 Both PCA and NMA assume the protein's movements along the collective coordinates are harmonic. Therefore,
 the protein's cavity would also change harmonically and its energy change would follow the hamonic potential energy equation:
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;U=\frac{1}{2} k \Delta X" title="harmonique_u" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\Delta E=\frac{1}{2} k \Delta X^{2}" title="harmonique_u" />
 
 where,
 
-- *U*: cavity's potential energy
+- *ΔE*: cavity's potential energy
 - *k*: spring constant
 - *ΔX*: displacement along the VGV
 
-ANA reports the spring constant ---in units of *KJ/mol*---, as a measure of the cavity's rigidity (or flexibility).
+ANA reports the spring constant ---in units of *KJ/mol* and in the direction of the VGV---, as a measure of the
+cavity's rigidity (or flexibility).
 For a given magnitud of potential energy, the lower this value is, the higher the displacement along the VGV will be.
 That is, the more flexible the cavity will be.
 
@@ -137,9 +134,8 @@ disordered region of another dynein protein:
 ![](assets/flexibility/3fm7.png)
 
 We have two homodimeric dynein light chains: Tctex1 (in dark salmon) and LC8 (in sand color). Each have 2 identical cavities
----which we will call cavities **C** and **D**---, through which they interact with a disordered Short Linear Motif (SLM)
-of another protein's disordered region (in light blue). The regular expression of the SLMs to which the LC8 homodimer binds has
-been already determined, but this is not the case for the TcTex1 domain.
+---which we will call cavities **C** and **D**---, through which they interact with a disordered region of another
+protein (in light blue). 
 
 If we check each domain separately, we see where their cavities lie. The LC8 domain: 
 ![](assets/flexibility/lc8.png)
@@ -158,12 +154,12 @@ NDD_step = 3
 ```
 
 The only change with respect to the LBPs configuration files is the input vectors format (`NDD_modes_format` option),
-now set to `column` since these are not Amber PCA vectors, but NMA vectors in a file where each column represents a vector.
+now set to `column` since these are not Amber PCA vectors, but NMA vectors in a file where each column represents a normal mode.
 
-The files with the vectors for each structure are called **modes_lc8** and **modes_tctex**.
-We also have the files with the frequencies (**frequencies_lc8** and **modes_tctex**). This frequency files must have a
+The files with the NMA vectors for each structure are called **modes_lc8** and **modes_tctex**.
+We also have the files with the frequencies for each structure: **frequencies_lc8** and **frequencies_tctex**. This frequency files must have a
 single column with a single frequency at each row and a fixed column width.
-There should also be one frequency for each vector and if not, ANA will let you know and cancel the run.
+There should also be one frequency per vector, otherwise ANA will let you know and cancel the run.
 
 The execution lines are inside the **./step_1.sh** file:
 
@@ -177,10 +173,8 @@ ANA2 tctex.pdb -c acb.cfg -M modes_tctex -F frequencies_tctex
 ANA2 tctex.pdb -c adb.cfg -M modes_tctex -F frequencies_tctex
 ```
 
-We see a new flag `-F`, this points ANA to the file with the frequencies. While Amber frequencies come in units
-of *1/cm*, when `NDD_modes_format` is set to `column`, ANA will assume this frequencies come in units of *1/s^2*.
-Proper unit treatment is good, but we just care about the comparisons we can make and since both structures,
-**lc8.pdb** and **tctex.pdb**, come from the same experiment, we can trust the frequencies to have relative meaning.
+We see a new flag `-F`, this points ANA to the file with the frequencies. When `NDD_modes_format` is
+set to `column`, ANA will assume this frequencies come in units of *1/s^2*.
 
 Let's run our **./step_1.sh** script:
 
@@ -199,8 +193,8 @@ TcTex cavity D
 Rigidity:  13.2121455156
 ```
 
-We can see that TcTex1's cavity is a bit more flexible and that could account for the lack of a regular expression
-of the SLMs it can bind to. Indeed, we were able to capture this higher flexibility in MD runs (not published).
+That is TcTex1's cavities are more flexible than LC8's.
+Indeed, we were able to capture this higher flexibility in MD runs (not published).
 
 
 ### Addendum
