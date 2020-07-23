@@ -3,6 +3,8 @@ id: theory
 title: Theory
 ---
 
+#### Disclaimer: this section is for ANA's developers reference. It does not contain relevant information for the users.
+
 ## Spring constant
 
 Adaptations used to calculate cavity [**flexibility**](flexibility.html) from Amber mass-weighted eigenvalues.
