@@ -1,6 +1,6 @@
 {
   "docs": {
     "Manual": ["ana_users", "install_instructions", "quickstart", "dynamics", "flexibility", "nma_flexibility"],
-    "Reference": ["config", "supported_formats", "troubleshooting"]
+    "Reference": ["config", "supported_formats", "troubleshooting", "theory"]
   }
 }

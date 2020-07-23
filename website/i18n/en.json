@@ -30,6 +30,9 @@
       "supported_formats": {
         "title": "Supported formats"
       },
+      "theory": {
+        "title": "Theory"
+      },
       "troubleshooting": {
         "title": "Troubleshooting"
       }
