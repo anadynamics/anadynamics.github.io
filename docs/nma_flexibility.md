@@ -5,7 +5,7 @@ title: Normal Modes Analysis & Flexibility
 
 Let's say you have a few structures and you want to characterize the flexibility of their cavities, but you
 can't run MD or NMA, at least not locally. You can always upload your PDBs at Bahar's [**server**](http://anm.csb.pitt.edu/) and get
-the first, say, 20 normal modes and their frequencies and then use ANA to calculate the cavitties flexibilities.
+the first, say, 20 normal modes and their frequencies and then use ANA to calculate the cavities flexibilities.
 In this tutorial, we're going to do just that. As always, all the files are available [**online**](https://github.com/anadynamics/ANA2/tree/master/aux/bahar_dynein).
 
 We will be using the same dynein structures we used on the [previous tutorial](flexibility.html), just to be sure we're not getting
@@ -27,7 +27,11 @@ We go straight to **Download files** and download from the first 2 links, "Small
 
 We name the eigenvalues as **pre_frequencies_lc8** and the eigenvectors as **pre_modes_lc8**. These 2 files require
 minor formatting changes before using them. In both files, we delete the first column with the row numbers since
-these are not informative. In addtion, in the eigenvalues file ---**pre_frequencies_lc8**---, we delete the first 6 rows
+these are not informative. In addtion, the first 6 frequencies, ---corresponding to the translation and rotation of
+the center of mass---, must be removed from the **pre_frequencies_lc8** file. That is, we edit the files **pre_modes_lc8**
+and **pre_frequencies_lc8** in order to keep only the first 20 slowest eigenvectors and frequencies.
+
+in the eigenvalues file ---**pre_frequencies_lc8**---, we delete the first 6 rows
 since these correspond to the translational and rotational frequencies so they have no real information. We also delete
 the last 10 rows since, for some reason, the server gave us 20 eigenvectors and 36 eigenvalues. After these modifications,
 we have 20 eigenvectors (in the properly formatted **modes_lc8** file) and 20 eigenvalues in the **frequencies_lc8** file.
@@ -71,5 +75,4 @@ And we see the same difference in flexibility we saw before: TcTex1 has more fle
 But we also notice the rigidities are much lower this time. This is because we only used 20 vectors and 20 frequencies
 instead of the whole set of collective coordinates (504 for LC8 and 576 for TcTex1),
 as we did in the [previous tutorial](flexibility.html).
-Yet, we still got the same result since we used the first 20 normal modes,
-the ones with the lowest frequencies and more biological relevance.
+Yet, we still got the same result with the first 20 normal modes.
