@@ -176,7 +176,8 @@ and load the **ch_4_testing.pdb** file on pymol:
 We're now ready to track our pocket along a Molecular Dynamics trajectory. Our
 trajectory is in the Amber NetCDF format, but ANA can read from other popular
 formats such as .gro, .trr or .xtc. 
-We use the `-d` flag (think of dynamics) to include the trajectory
+We use the `-d` flag (think of dynamics) to include the trajectory and we
+remove the `-t` flag, since this option will cancel every other calculation.
 
 ```
 > ANA2 input_pdb.pdb -c config_4.cfg -d input_trajectory.nc -o 5_cavity
