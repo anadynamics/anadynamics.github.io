@@ -14,7 +14,7 @@ Adaptations used to calculate cavity [**flexibility**](flexibility.html) from Am
 where,
 
 - *ν*: frequency in units of 1/s
-- *λ^{amber}*: amber eigenvalues in units of 1/cm
+- *λ^{amber}*: amber frequencies in units of 1/cm
 - *c*: speed of light
 - constants added to adjust *cm* to *angstroms* and *Kg* to *g*
 
@@ -47,4 +47,18 @@ where,
 #### Energy of displacement along VGV
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;E_{VGV} = \frac{1}{2} \frac{1}{53.088^{2}} \sum_{i=1}^{3N-6} c_{i}^{2} \lambda_{i \ Amber}^{2}" title="harmonique_u" />
+
+## Amber PCA eigenvalues to quasi-harmonic analysis frequencies
+
+From equipartition theorem:
+
+<img src="https://latex.codecogs.com/gif.latex?\omega_{i}&space;=&space;\sqrt{\frac{K_{B}T}{\lambda_{i}}}" title="\omega_{i} = \sqrt{\frac{K_{B}T}{\lambda_{i}}}" />
+
+In Amber from angstroms^2 to 1/cm^-1 in Kcal/mol, at 300K:
+
+<img src="https://latex.codecogs.com/gif.latex?\lambda^{amber}_{i}&space;=&space;108.587&space;\sqrt{\frac{0.6}{\lambda_{i}}}" title="\lambda^{amber}_{i} = 108.587 \sqrt{\frac{0.6}{\lambda_{i}}}" />
+
+- *λ^{amber}_{i}*: amber frequencies in units of 1/cm
+- *λ_{i}*: amber eigenvalues in units of A^{2}
+- constant added to adjust Å to cm^{-1}
 
