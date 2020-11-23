@@ -5,6 +5,9 @@
     "previous": "Previous",
     "tagline": "Volume and flexibility calculation for protein cavities",
     "docs": {
+      "algorithms": {
+        "title": "ANA algorithms"
+      },
       "config": {
         "title": "Configuration variables"
       },
@@ -17,6 +20,9 @@
       },
       "flexibility": {
         "title": "Flexibility"
+      },
+      "gui": {
+        "title": "ANA GUI"
       },
       "install_instructions": {
         "title": "Installation instructions"
