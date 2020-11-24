@@ -62,7 +62,7 @@ of the cavity. When `NDD_modes_format` is set to `amber`, ANA will assume these 
 
 If we wanted to perform just the first steps, then we would have to specify the terminal option
 `NDD_output`, since we will be getting 2 vectors with the displaced volumes (if `NDD_step = 1`) or the VGV
-(when `NDD_output = 2`). Since `NDD_step = 3` ANA will just output the flexibility to the console.
+(when `NDD_step = 2`). Since `NDD_step = 3` ANA will just output the flexibility to the console.
 
 We now turn our attention to the **step_1.sh** script file:
 
