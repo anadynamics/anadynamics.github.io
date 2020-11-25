@@ -63,3 +63,22 @@ Then test the version executed with the gcc command:
 ```
 g++ -v
 ```
+
+## Discarding vectors from Amber file format
+
+If you computed more Amber vectors than you want to use, you have to change the header line to let ANA know your intentions.
+
+For example, if you want to discard most vectors from this file and only preserve the first 10, there's no need
+to cut the original file, just modify the original header from this:
+
+```
+ Eigenvector file: MWCOVAR nmodes 330 width 11
+```
+
+to this:
+
+```
+ Eigenvector file: MWCOVAR nmodes 10 width 11
+```
+
+So now ANA knows it has to read only 10 vectors.
