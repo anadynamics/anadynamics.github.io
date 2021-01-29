@@ -36,17 +36,17 @@ where,
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lambda_{NMA} = 4 \pi^{2} c^{2} 4.184E^{-22} \lambda_{Amber}^{2}" title="harmonique_u" />
 
-#### Energy of displacement along VGV
+#### Rigidity constant
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;E_{VGV} = \frac{1}{2} \frac{1}{108.591^{2}} \sum_{i=1}^{3N-6} c_{i}^{2} \lambda_{i \ Amber}^{2}" title="harmonique_u" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;k_{VGV} = \frac{1}{108.591^{2}} \sum_{i=1}^{3N-6} c_{i}^{2} \lambda_{i \ Amber}^{2}" title="harmonique_u" />
 
 ### In units of *KJ/mol*
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\lambda_{NMA} = 4 \pi^{2} c^{2} E^{-22} \lambda_{Amber}^{2}" title="harmonique_u" />
 
-#### Energy of displacement along VGV
+#### Rigidity constant
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;E_{VGV} = \frac{1}{2} \frac{1}{53.088^{2}} \sum_{i=1}^{3N-6} c_{i}^{2} \lambda_{i \ Amber}^{2}" title="harmonique_u" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;k_{VGV} = \frac{1}{53.088^{2}} \sum_{i=1}^{3N-6} c_{i}^{2} \lambda_{i \ Amber}^{2}" title="harmonique_u" />
 
 ## Amber PCA eigenvalues to quasi-harmonic analysis frequencies
 
@@ -56,9 +56,9 @@ From equipartition theorem:
 
 In Amber from angstroms^2 to 1/cm^-1 in Kcal/mol, at 300K:
 
-<img src="https://latex.codecogs.com/gif.latex?\lambda^{amber}_{i}&space;=&space;108.587&space;\sqrt{\frac{0.6}{\lambda_{i}}}" title="\lambda^{amber}_{i} = 108.587 \sqrt{\frac{0.6}{\lambda_{i}}}" />
+<img src="https://latex.codecogs.com/gif.latex?\lambda_{amber \ i}&space;=&space;108.587&space;\sqrt{\frac{0.6}{\lambda_{i}}}" title="\lambda_{amber \ i} = 108.587 \sqrt{\frac{0.6}{\lambda_{PCA \ i}}}" />
 
-- *λ^{amber}_{i}*: amber frequencies in units of 1/cm
-- *λ_{i}*: amber eigenvalues in units of A^{2}
+- *λ_{amber \ i}*: amber frequencies in units of 1/cm
+- *λ_{PCA \ i}*: amber PCA eigenvalues in units of Å^{2}
 - constant added to adjust Å to cm^{-1}
 
