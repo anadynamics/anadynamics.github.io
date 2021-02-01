@@ -52,11 +52,11 @@ where,
 
 From equipartition theorem:
 
-<img src="https://latex.codecogs.com/gif.latex?\omega_{i}&space;=&space;\sqrt{\frac{K_{B}T}{\lambda_{i}}}" title="\omega_{i} = \sqrt{\frac{K_{B}T}{\lambda_{i}}}" />
+<img src="https://latex.codecogs.com/gif.latex?\omega_{i}&space;=&space;\sqrt{\frac{K_{B}T}{\lambda_{PCA \ i}}}" title="\omega_{i} = \sqrt{\frac{K_{B}T}{\lambda_{PCA \ i}}}" />
 
 In Amber from angstroms^2 to 1/cm^-1 in Kcal/mol, at 300K:
 
-<img src="https://latex.codecogs.com/gif.latex?\lambda_{amber \ i}&space;=&space;108.587&space;\sqrt{\frac{0.6}{\lambda_{i}}}" title="\lambda_{i \ amber} = 108.587 \sqrt{\frac{0.6}{\lambda_{PCA \ i}}}" />
+<img src="https://latex.codecogs.com/gif.latex?\lambda_{amber \ i}&space;=&space;108.587&space;\sqrt{\frac{0.6}{\lambda_{PCA \ i}}}" title="\lambda_{i \ amber} = 108.587 \sqrt{\frac{0.6}{\lambda_{PCA \ i}}}" />
 
 - *λ_{i \ amber}*: amber frequencies in units of 1/cm
 - *λ_{PCA \ i}*: amber PCA eigenvalues in units of Å^{2}
