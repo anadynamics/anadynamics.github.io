@@ -177,7 +177,7 @@ stop
 ```
 NDD_modes_format
 ```
- Format of the input vectors. amber: vectors will be read as Amber PCA modes. row: vectors will be read in row major order. column: vectors will be read in column major order.
+ Format of the input vectors. amber: vectors will be read as Amber PCA modes. row: vectors will be read in row major order, each row is a vector. column: vectors will be read in column major order, each column is a vector.
  * Default: **row**
 ```
 NDD_particles_per_residue
