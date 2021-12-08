@@ -19,8 +19,8 @@ sudo apt-get install libcgal-qt5-dev
 
 If you ran into this error when typing `cmake .. -Wno-dev` then this might help.
 
-This shows up if you have a very old gcc compiler. ANA is written in C++17 and C++17 features are available since GCC 5, gcc's current version
-is 10.1.
+This shows up if you have a very old gcc compiler. ANA is written in C++17 and C++17 features are available since GCC 5,
+which came out in 2015.
 
 To update your gcc in a Ubuntu system add the ppa repository and update the APT database:
 ```
