@@ -28,13 +28,13 @@ sudo add-apt-repository ppa:ubuntu-toolchain-r/test
 sudo apt-get update
 ```
 
-Then install the desired GCC and G++ versions:
+Then install the desired GCC and G++ versions. As of this day, `gcc-11` is the latest version:
 
 ```
-sudo apt-get install gcc g++ gcc-10 g++-10
+sudo apt-get install gcc g++ gcc-11 g++-11
 ```
 
-Now the new compiler version is available in the system by using a different command name (that is, gcc-10), but the default version,
+Now the new compiler version is available in the system by using a different command name (that is, gcc-11), but the default version,
 the one that is executed with the command `gcc`, will still be the previous one. To change the default version executed with the `gcc`
 command we have to configure the alternatives in the system.
 
@@ -48,7 +48,7 @@ Each alternative has a priority associated with it. When a link group is in auto
 of the group will be those which have the highest priority.
 
 ```
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-10 10 --slave /usr/bin/g++ g++ /usr/bin/g++-10
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 10 --slave /usr/bin/g++ g++ /usr/bin/g++-11
 ```
 
 Once the different alternatives for the gcc package have been created then it can be configured with:
