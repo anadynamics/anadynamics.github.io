@@ -1,8 +1,7 @@
 ---
-title: Blog Title
-author: Blog Author
-authorURL: http://twitter.com/
-authorFBID: 100002976521003
+title: typeof() for C++
+author: Patricio Barletta
+authorURL: https://twitter.com/gpbarletta
 ---
 
 
